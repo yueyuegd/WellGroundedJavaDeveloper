@@ -39,9 +39,17 @@ public class Update {
         return updateText;
     }
 
+    @Override
+    public String toString() {
+        return "Update{" +
+                "updateText='" + updateText + '\'' +
+                ", author=" + author +
+                '}';
+    }
+
     public static void main(String[] args) {
         Update.Builder ub = new Update.Builder();
-        Author myAuthor = new Author();
+        Author myAuthor = new Author("");
         Update u = ub.author(myAuthor).updateText("Hello").build();
     }
 
