@@ -5,7 +5,7 @@ package chapter4;
  * User:zhangyue-k
  * Date:2017/8/26
  */
-public class Update {
+public class Update implements Comparable{
 
     private final String updateText;
     private final Author author;
@@ -15,6 +15,12 @@ public class Update {
         updateText = b.updateText;
     }
 
+
+
+    @Override
+    public int compareTo(Object o) {
+        return -1;
+    }
 
 
     public static class Builder implements ObjBuilder<Update>{
@@ -28,6 +34,10 @@ public class Update {
 
         public Builder updateText(String updateText1){
             updateText = updateText1;
+            return this;
+        }
+
+        public Builder createTime(long now){
             return this;
         }
 
